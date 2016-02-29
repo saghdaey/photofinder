@@ -7,3 +7,4 @@ var visitorSchema = new mongoose.Schema ({
 });
 
 var visitorModel = mongoose.model("Visitor", visitorSchema);
+module.exports = visitorModel
