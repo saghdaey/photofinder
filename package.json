@@ -9,7 +9,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.13.4",
+    "mongodb": "^2.1.7",
+    "mongoose": "^4.4.5",
     "nodemon": "^1.9.1",
+    "path": "^0.12.7",
     "sendgrid": "^2.0.0"
   }
 }
