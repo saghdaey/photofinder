@@ -1,4 +1,3 @@
-
 var config = require('./config');
 var express = require('express');
 var mongoose = require('mongoose');
@@ -24,16 +23,16 @@ db.on('error', console.error.bind(console, 'connection error:'));
 //initialize express instance
 var app = express();
 var port = process.env.PORT || 3000;
-app.use (bodyParser.json());
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname + 'client')));
 app.listen(port);
 console.log('Now listening for visitors on port ' + port);
-app.get('/', function(req, res){
-  res.send('HELLO');
+app.get('/', function(req, res) {
+  res.sendFile(path.join(__dirname + '/client/index.html'));
 })
 var router = express.Router();
 router.route('/api/fullcontact/visitors')
