@@ -28,7 +28,7 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-app.use(express.static(path.join(__dirname + 'client')));
+app.use(express.static(path.join(__dirname + '/client')));
 app.listen(port);
 console.log('Now listening for visitors on port ' + port);
 app.get('/', function(req, res) {
@@ -36,7 +36,8 @@ app.get('/', function(req, res) {
 })
 var router = express.Router();
 router.route('/api/fullcontact/visitors')
-      .get(fcController.getVisitorInfo);
+  .post(fcController.getVisitorInfo);
+
 app.use('/', router);
 
 // sendgrid.send(email, function(err, json){
