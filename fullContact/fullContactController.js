@@ -8,3 +8,4 @@ exports.getVisitorInfo = function(req, res){
   })
 }
 // is photo array size greater than 2 - if yes identity confrimed - send notifications
+// twilio & sendgrid 

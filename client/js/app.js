@@ -7,13 +7,11 @@ $(document).ready(function(){
         url: "/api/fullcontact/visitors",
         data:{email: email}
       }).done(function(response){
-        console.log(response.photos);
+        var photos=response.photos;
+        console.log(photos);
         $.each(photos, function(index,photo){
-          $('.photo-container').append('<img src="' + photo.url + '"' + '>');
-         
+          $('.photo-container').append('<img src="' + photo.url + '"' + '>');    
         })
-
-
       });
   })
 
