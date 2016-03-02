@@ -9,9 +9,11 @@ $(document).ready(function(){
       }).done(function(response){
         var photos=response.photos;
         console.log(photos);
+        //append images to webpage
         $.each(photos, function(index,photo){
           $('.photo-container').append('<img src="' + photo.url + '"' + '>');    
         })
+        //shoot off text notification & email notification
       });
   })
 

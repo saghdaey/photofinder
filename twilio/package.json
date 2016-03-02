@@ -2,7 +2,7 @@
   "name": "twilioapp",
   "version": "1.0.0",
   "description": "send sms when guest arrives",
-  "main": "index.js",
+  "main": "app.js",
   "dependencies": {
     "express": "^4.13.4"
   },
