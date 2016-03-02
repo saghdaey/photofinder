@@ -11,8 +11,11 @@ $(document).ready(function(){
         console.log(photos);
         if(photos.length<2){
           console.log("identity unconfirmed. less than 2 photos found.");
-          $('.photo-container').append('<p>Identity not confirmed</p>');
-        }
+          if(photos.length>0){
+             $('.photo-container').append('<p>One photo found on '+ photos[0].typeName+' </p>');
+            }
+          $('.photo-container').append('<p>Identity not confirmed, condition of 2 photos not met.</p>');
+          }
         
         else{
           console.log('identity confirmed');

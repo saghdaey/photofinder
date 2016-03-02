@@ -10,8 +10,8 @@ var fcKey = config.fullContact.key;
 var fcController = require('./controllers/fullContactController.js');
 //default email for testing
 var email = new sendgrid.Email({
-  to: "sanam.aghdaey@gmail.com",
-  from: "sanm.aghdaey@gmail.com",
+  to: "bcfutureteam@gmail.com",
+  from: "sanam.aghdaey@gmail.com", //why do i need this????
   subject: "testing",
   text: "Testing Sendgrid"
 });
