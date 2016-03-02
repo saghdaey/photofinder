@@ -6,14 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository":{
-    "type":"git",
-    "url":"https://github.com/saghdaey/photofinder"
-    },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/saghdaey/photofinder"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.0",
+    "dotenv": "^2.0.0",
     "express": "^4.13.4",
     "mongodb": "^2.1.7",
     "mongoose": "^4.4.5",

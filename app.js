@@ -4,17 +4,27 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var path = require('path');
 var sendgrid = require('sendgrid')(config.sendgrid.key);
+//var sendgrid = require('sendgrid')(process.env.SENDGRID_KEY);
+//error msg: provided authorization grant is invalid, expired, or revoked
+//email doesn't send
+
+var dotenv= require('dotenv').config();
 var Visitor = require('./db/schema');
 var request = require('request');
 var fcKey = config.fullContact.key;
 var fcController = require('./controllers/fullContactController.js');
+var twilio = require('./twilio/app.js');
+
 //default email for testing
 var email = new sendgrid.Email({
   to: "bcfutureteam@gmail.com",
-  from: "sanam.aghdaey@gmail.com", //why do i need this????
+  from: "sanam.aghdaey@gmail.com", 
+  //why do i need this? given my sendgrid key shouldn't it already come from my gmail
   subject: "testing",
   text: "Testing Sendgrid"
 });
+
+
 // initialize mongo connection
 mongoose.connect('mongodb://localhost:27017/visitors');
 var db = mongoose.connection;
@@ -40,7 +50,12 @@ router.route('/api/fullcontact/visitors')
 
 app.use('/', router);
 
-// sendgrid.send(email, function(err, json){
-//   if(err) {return console.error(err); }
-//   console.log(json);
-// });
+console.log(process.env.TO); //this works
+console.log(process.env.SENDGRID_KEY); //this works
+
+sendgrid.send(email, function(err, json){
+   if(err) {
+   	return console.error(err); 
+   	}
+   console.log(json);
+});

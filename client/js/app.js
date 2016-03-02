@@ -16,7 +16,7 @@ $(document).ready(function(){
             }
           $('.photo-container').append('<p>Identity not confirmed, condition of 2 photos not met.</p>');
           }
-        
+         
         else{
           console.log('identity confirmed');
           console.log(photos);
@@ -24,7 +24,6 @@ $(document).ready(function(){
             console.log(photo);
             $('.photo-container').append('<img src="' + photo.url + '"' + '>');
           })
-         
         }
 
       });
